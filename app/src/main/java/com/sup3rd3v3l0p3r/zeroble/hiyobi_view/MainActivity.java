@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                         url.get(cnt).attr("href"));
                 cnt++;
             }
+            listview.addFooterView(getLayoutInflater().inflate(R.layout.footer, null, false));
             listview.setAdapter(adapter);
         }
     }
