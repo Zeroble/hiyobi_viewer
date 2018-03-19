@@ -1,13 +1,11 @@
 package com.sup3rd3v3l0p3r.zeroble.hiyobi_view;
 
-import android.graphics.drawable.Drawable;
-
 /**
  * Created by dlals on 2018-03-18.
  */
 
 public class HiyobiListItem {
-    private Drawable iconDrawable;
+    private String iconDrawable;
     private String titleStr;
     private String artistStr;
     private String originalStr;
@@ -15,7 +13,7 @@ public class HiyobiListItem {
     private String tagsStr;
     private String urlStr;
 
-    public void setIconDrawable(Drawable iconDrawable) {
+    public void setIconDrawable(String iconDrawable) {
         this.iconDrawable = iconDrawable;
     }
 
@@ -43,7 +41,7 @@ public class HiyobiListItem {
         this.urlStr = urlStr;
     }
 
-    public Drawable getIconDrawable() {
+    public String getIconDrawable() {
         return iconDrawable;
     }
 
