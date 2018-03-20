@@ -52,13 +52,10 @@ public class Viewer extends AppCompatActivity {
             int cnt = 0;
             Toast.makeText(Viewer.this,"Loading ok",Toast.LENGTH_SHORT).show();
             for(Element element: images) {
-                Log.i("asdfadsfasdf",""+element.text());
                 adapter.addItem(element.text());
                 listview.setAdapter(adapter);
                 cnt++;
             }
-
-            Log.i("adfs",""+listview.getCount());
         }
     }
 

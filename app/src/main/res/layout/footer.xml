@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="75dp"
@@ -11,130 +11,144 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"/>
+            android:layout_weight="0.5" />
+
         <TextView
+            android:id="@+id/footer_previous"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/footer_button_left"
             android:gravity="center"
             android:text="\u003C\u003C"
-            android:textColor="#4052b5"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/footer_button_left"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"/>
+            android:textColor="#4052b5" />
 
         <TextView
-            android:text="1"
-            android:gravity="center"
+            android:id="@+id/footer_1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:background="@drawable/footer_button_center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"/>
+            android:gravity="center"
+            android:text="1" />
 
         <TextView
-            android:text="2"
-            android:gravity="center"
+            android:id="@+id/footer_2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:background="@drawable/footer_button_center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"/>
+            android:gravity="center"
+            android:text="2" />
 
         <TextView
-            android:text="3"
-            android:gravity="center"
+            android:id="@+id/footer_3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:background="@drawable/footer_button_center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"/>
+            android:gravity="center"
+            android:text="3" />
 
         <TextView
-            android:text="4"
-            android:gravity="center"
+            android:id="@+id/footer_4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:background="@drawable/footer_button_center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"/>
+            android:gravity="center"
+            android:text="4" />
 
         <TextView
-            android:text="5"
-            android:gravity="center"
+            android:id="@+id/footer_5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:background="@drawable/footer_button_center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"/>
+            android:gravity="center"
+            android:text="5" />
 
         <TextView
-            android:text="6"
-            android:gravity="center"
+            android:id="@+id/footer_6"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:background="@drawable/footer_button_center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"/>
+            android:gravity="center"
+            android:text="6" />
 
         <TextView
-            android:text="7"
-            android:gravity="center"
+            android:id="@+id/footer_7"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:background="@drawable/footer_button_center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"/>
+            android:gravity="center"
+            android:text="7" />
 
         <TextView
-            android:text="8"
-            android:gravity="center"
+            android:id="@+id/footer_8"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:background="@drawable/footer_button_center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"/>
+            android:gravity="center"
+            android:text="8" />
 
         <TextView
-            android:text="9"
-            android:gravity="center"
+            android:id="@+id/footer_9"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:background="@drawable/footer_button_center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"/>
+            android:gravity="center"
+            android:text="9" />
 
         <TextView
-            android:text="10"
-            android:gravity="center"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:background="@drawable/footer_button_center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"/>
+            android:gravity="center"
+            android:id="@+id/footer_10"
+            android:text="10" />
 
         <TextView
-            android:text="\u003E\u003E"
-            android:gravity="center"
+            android:id="@+id/footer_next"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:background="@drawable/footer_button_right"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"/>
+            android:gravity="center"
+            android:text="\u003E\u003E" />
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"/>
+            android:layout_weight="0.5" />
     </LinearLayout>
 </LinearLayout>
