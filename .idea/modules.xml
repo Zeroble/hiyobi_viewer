@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Hiyobi_Viewer_.iml" filepath="$PROJECT_DIR$/Hiyobi_Viewer_.iml" />
+      <module fileurl="file://D:\20519 AndroidSturio\hiyobi_viewer\Hiyobi_Viewer_.iml" filepath="D:\20519 AndroidSturio\hiyobi_viewer\Hiyobi_Viewer_.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\20519 AndroidSturio\hiyobi_viewer\app\app.iml" filepath="D:\20519 AndroidSturio\hiyobi_viewer\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hiyobi_viewer.iml" filepath="$PROJECT_DIR$/hiyobi_viewer.iml" />
     </modules>
   </component>
 </project>
