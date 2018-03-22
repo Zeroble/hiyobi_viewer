@@ -7,6 +7,6 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:id="@+id/viewer"/>
-
+        android:id="@+id/viewer"
+        android:paddingBottom="15dp"/>
 </LinearLayout>

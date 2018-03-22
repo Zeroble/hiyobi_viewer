@@ -6,14 +6,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.sup3rd3v3l0p3r.zeroble.hiyobi_view.MainActivity">
-
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/hiyobi_list">
     </ListView>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
 
 </LinearLayout>
