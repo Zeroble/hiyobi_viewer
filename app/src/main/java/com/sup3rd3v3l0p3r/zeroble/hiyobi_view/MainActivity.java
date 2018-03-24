@@ -9,8 +9,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -30,15 +35,62 @@ public class MainActivity extends AppCompatActivity {
     Document doc = null;
     HiyobiListAdapter adapter;
     ListView listview;
+    ImageView loadingImg;
+    TextView[] footer_buttons = new TextView[12];
+    int nowPage_10 = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        listview = findViewById(R.id.hiyobi_list);
+        listview.addFooterView(getLayoutInflater().inflate(R.layout.footer, null, false));
+
+        footer_buttons[0] = findViewById(R.id.footer_previous);
+        footer_buttons[1] = findViewById(R.id.footer_1);
+        footer_buttons[2] = findViewById(R.id.footer_2);
+        footer_buttons[3] = findViewById(R.id.footer_3);
+        footer_buttons[4] = findViewById(R.id.footer_4);
+        footer_buttons[5] = findViewById(R.id.footer_5);
+        footer_buttons[6] = findViewById(R.id.footer_6);
+        footer_buttons[7] = findViewById(R.id.footer_7);
+        footer_buttons[8] = findViewById(R.id.footer_8);
+        footer_buttons[9] = findViewById(R.id.footer_9);
+        footer_buttons[10] = findViewById(R.id.footer_10);
+        footer_buttons[11] = findViewById(R.id.footer_next);
+
+        for(int i = 1;i<=10;i++) {
+            final int n = i;
+            footer_buttons[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    new LoadListPage(n+nowPage_10).execute();
+                }
+            });
+        }
+        footer_buttons[0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(nowPage_10!=0) {
+                    nowPage_10 -= 10;
+                    new LoadListPage(1+nowPage_10).execute();
+                }
+            }
+        });
+
+        footer_buttons[11].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nowPage_10+=10;
+                new LoadListPage(1+nowPage_10).execute();
+            }
+        });
+
+        loadingImg = findViewById(R.id.main_loading);
+        Glide.with(this).load(R.drawable.giphy).into(new GlideDrawableImageViewTarget(loadingImg));
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        listview = findViewById(R.id.hiyobi_list);
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -90,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(Object o) {
             super.onPostExecute(o);
             int cnt = 0;
-            Toast.makeText(MainActivity.this, "Loading ok", Toast.LENGTH_SHORT).show();
+            adapter.listViewItemList.clear();
             for (Element element : title) {
                 adapter.addItem(
                         img.get(cnt).attr("src"),
@@ -102,10 +154,22 @@ public class MainActivity extends AppCompatActivity {
                         url.get(cnt).attr("href"));
                 cnt++;
             }
-            listview.addFooterView(getLayoutInflater().inflate(R.layout.footer, null, false));
+            for(int i = 1;i<=10;i++) {
+                footer_buttons[i].setBackground(getResources().getDrawable(R.drawable.footer_button_center));
+                footer_buttons[i].setText(i+nowPage_10+"");
+            }
+            if(page%10 == 0)
+                footer_buttons[10].setBackground(getResources().getDrawable(R.drawable.footer_button_selected));
+            else
+                footer_buttons[page%10].setBackground(getResources().getDrawable(R.drawable.footer_button_selected));
+
             listview.setAdapter(adapter);
+            listview.setVisibility(View.VISIBLE);
+            loadingImg.setVisibility(View.GONE);
+            Toast.makeText(MainActivity.this, "page : "+page, Toast.LENGTH_SHORT).show();
         }
     }
+
 
 }
 
