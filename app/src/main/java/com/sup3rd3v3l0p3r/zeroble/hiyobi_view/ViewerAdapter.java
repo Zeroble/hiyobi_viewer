@@ -14,7 +14,8 @@ import java.util.ArrayList;
 public class ViewerAdapter extends BaseAdapter {
     // Adapter에 추가된 데이터를 저장하기 위한 ArrayList
     private ArrayList<ViewerItem> listViewItemList = new ArrayList<ViewerItem>();
-
+//    ViewerItem listViewItem;
+//    ImageView iconImageView;
     // Adapter에 사용되는 데이터의 개수를 리턴. : 필수 구현
     @Override
     public int getCount() {
@@ -40,10 +41,33 @@ public class ViewerAdapter extends BaseAdapter {
         ViewerItem listViewItem = listViewItemList.get(position);
 
         // 아이템 내 각 위젯에 데이터 반영
-        Glide.with(context).load(listViewItem.getIconDrawable()).into(iconImageView);
-
+        Glide.with(context).load(listViewItem.getIconDrawable()).override(540,960).into(iconImageView);
+//        new loadingImg().execute();
         return convertView;
     }
+//    class loadingImg extends AsyncTask{
+//        Bitmap bitmap;
+//        @Override
+//        protected Object doInBackground(Object[] objects) {
+//            try {
+//                HttpsURLConnection httpsURLConnection = (HttpsURLConnection)new URL(listViewItem.getIconDrawable()).openConnection();
+//                httpsURLConnection.setDoInput(true);
+//                httpsURLConnection.connect();
+//
+//                InputStream inputStream = httpsURLConnection.getInputStream();
+//                bitmap = BitmapFactory.decodeStream(inputStream);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            return null;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(Object o) {
+//            iconImageView.setImageBitmap(bitmap);
+//            super.onPostExecute(o);
+//        }
+//    }
 
     // 지정한 위치(position)에 있는 데이터와 관계된 아이템(row)의 ID를 리턴. : 필수 구현
     @Override
