@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -58,10 +59,13 @@ public class Viewer extends AppCompatActivity {
     public class Loading extends AsyncTask {
         @Override
         protected Object doInBackground(Object[] objects) {
+            Log.d("tagasdf","start loading");
             try {
                 doc = Jsoup.connect("https://hiyobi.me"+num).get();
                 images = doc.select("body > div.img-url");
+                Log.d("tagasdf",doc+"");
             } catch (IOException e) {
+                Log.d("tagasdf","error : "+e);
                 e.printStackTrace();
             }
 

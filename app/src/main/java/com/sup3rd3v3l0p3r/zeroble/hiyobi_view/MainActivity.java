@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -144,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
             int cnt = 0;
             adapter.listViewItemList.clear();
             for (Element element : title) {
+                Log.d("Tag","asdf : "+element.text());
                 adapter.addItem(
                         img.get(cnt).attr("src"),
                         "제목 : " + element.text(),
